@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{79B433A7-9053-40EB-B867-3FEC78CF4D36}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{15675084-B81F-44F0-9568-6DE97D32264F}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Runner</RootNamespace>
-    <AssemblyName>Runner</AssemblyName>
+    <RootNamespace>DesignPatterns.Interpreter.Codeproject</RootNamespace>
+    <AssemblyName>DesignPatterns.Interpreter.Codeproject</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,21 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="AddExpression.cs" />
+    <Compile Include="IExpression.cs" />
+    <Compile Include="NumberExpression.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DesignPatterns.Interpreter.Codeproject\DesignPatterns.Interpreter.Codeproject.csproj">
-      <Project>{15675084-b81f-44f0-9568-6de97d32264f}</Project>
-      <Name>DesignPatterns.Interpreter.Codeproject</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DesignPatterns.Interpreter\DesignPatterns.Interpreter.csproj">
-      <Project>{abbc67b2-d7d5-45e2-bc5c-0207f56263a2}</Project>
-      <Name>DesignPatterns.Interpreter</Name>
-    </ProjectReference>
+    <Compile Include="SubtractExpression.cs" />
+    <Compile Include="TokenReader.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

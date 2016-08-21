@@ -1,4 +1,5 @@
 ﻿using DesignPatterns.Interpreter;
+using DesignPatterns.Interpreter.Codeproject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,8 @@ namespace Runner {
         /// Just a tester app to run design patterns.
         /// </summary>
         static void Main(string[] args) {
-            new Program().Interpreter();
+            //new Program().Interpreter();
+            new Program().Interpreter_Codeproject();
         }
 
         void Interpreter() {
@@ -35,6 +37,17 @@ namespace Runner {
 
             // debug
             Console.WriteLine("{0} = {1}", roman, context.Output);
+        }
+
+        void Interpreter_Codeproject() {
+            string text = "+ - 10 2 3";
+            IList<string> tokens = text.Split(' ').ToList();
+
+            IExpression expression = new TokenReader().ReadToken(tokens);
+            Console.WriteLine(
+                "Expression: {0}, Result: {1}",
+                text, expression.Interpret()
+            );
         }
     }
 }
